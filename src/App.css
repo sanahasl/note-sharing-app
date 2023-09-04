@@ -1,6 +1,7 @@
 .App {
   text-align: center;
 }
-img{
+.note_document > img{
   width: 200px;
 }
+

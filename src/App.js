@@ -1,12 +1,31 @@
 import "./App.css";
 import { useState, useEffect } from "react";
 import { storage } from "./firebase";
-import { ref, uploadBytes, listAll, getDownloadURL } from "firebase/storage";
+import {
+  ref,
+  uploadBytes,
+  listAll,
+  getDownloadURL,
+  deleteObject,
+} from "firebase/storage";
 import { v4 } from "uuid";
 
 function App() {
   const [imageUpload, setImageUpload] = useState(null);
   const [imageList, setImageList] = useState([]);
+
+  const deleteImage = (imageUrl) => {
+    const imageRef = ref(storage, imageUrl);
+    deleteObject(imageRef)
+      .then(() => {
+        alert("file deleted succesfully");
+      })
+      .catch((error) => {
+        alert("an error occured").then((error) => {
+          console.log(error);
+        });
+      });
+  };
 
   const imageListRef = ref(storage, "/images");
   const uploadImage = () => {
@@ -39,7 +58,14 @@ function App() {
       <button onClick={uploadImage}> Upload image</button>
 
       {imageList.map((url) => {
-        return <img src={url} />;
+        return (
+          <div class="note_document" key={url}>
+            <img src={url} />
+            <button class="delete-note-btn" onClick={() => deleteImage(url)}>
+              Delete
+            </button>
+          </div>
+        );
       })}
     </div>
   );
