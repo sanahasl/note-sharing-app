@@ -1,7 +1,33 @@
+/* CSS HEX */
+:root {
+  --true-blue: #0466c8ff;
+  --sapphire: #0353a4ff;
+  --yale-blue: #023e7dff;
+  --oxford-blue: #002855ff;
+  --oxford-blue-2: #001845ff;
+  --oxford-blue-3: #001233ff;
+  --delft-blue: #33415cff;
+  --paynes-gray: #5c677dff;
+  --slate-gray: #7d8597ff;
+  --cool-gray: #979dacff;
+}
+
 .App {
   text-align: center;
 }
-.note_document > img{
+.note_document > img {
   width: 200px;
 }
-
+body {
+  width: 100%;
+  background-color: var(--oxford-blue-2);
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+.logo {
+  width: 100px;
+  position: absolute;
+  top: 1vh;
+  left: 1vw;
+}

@@ -49,24 +49,28 @@ function App() {
 
   return (
     <div className="App">
-      <input
-        type="file"
-        onChange={(event) => {
-          setImageUpload(event.target.files[0]);
-        }}
-      />
-      <button onClick={uploadImage}> Upload image</button>
-
-      {imageList.map((url) => {
-        return (
-          <div class="note_document" key={url}>
-            <img src={url} />
-            <button class="delete-note-btn" onClick={() => deleteImage(url)}>
-              Delete
-            </button>
-          </div>
-        );
-      })}
+      <img className="logo" src="logo.png" alt="logo"></img>
+      <div className="upload-button">
+        <input
+          type="file"
+          onChange={(event) => {
+            setImageUpload(event.target.files[0]);
+          }}
+        />
+        <button onClick={uploadImage}> Upload image</button>
+      </div>
+      <div className="notes-container">
+        {imageList.map((url) => {
+          return (
+            <div class="note_document" key={url}>
+              <img src={url} />
+              <button class="delete-note-btn" onClick={() => deleteImage(url)}>
+                Delete
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
