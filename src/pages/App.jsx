@@ -1,6 +1,6 @@
-import "./App.css";
+import "../App.css";
 import { useState, useEffect } from "react";
-import { storage } from "./firebase";
+import { storage } from "../firebase";
 import {
   ref,
   uploadBytes,
@@ -9,6 +9,7 @@ import {
   deleteObject,
 } from "firebase/storage";
 import { v4 } from "uuid";
+import { Link } from "react-router-dom";
 
 function App() {
   const [imageUpload, setImageUpload] = useState(null);
@@ -70,6 +71,11 @@ function App() {
             </div>
           );
         })}
+      </div>
+      <div className="signout">
+        <Link to="/">
+          <button className="signout-btn">SIGN OUT</button>
+        </Link>
       </div>
     </div>
   );
