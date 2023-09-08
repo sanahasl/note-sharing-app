@@ -1,23 +1,12 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  Routes,
-} from "react-router-dom";
-import ReactDOM from "react-dom/client";
-import App from "./pages/App";
-import reportWebVitals from "./reportWebVitals";
-import SignIn from "./pages/Index"
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="app" Component={App} />
-        <Route path="/" Component={SignIn}/>
-        </Routes>
-    </Router>
+    <App />
   </React.StrictMode>
 );
 
