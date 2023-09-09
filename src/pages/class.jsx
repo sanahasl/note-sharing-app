@@ -1,6 +1,6 @@
-import "./App.css";
+import "../App.css";
 import { useState, useEffect } from "react";
-import { storage } from "./firebase";
+import { storage } from "../firebase";
 import {
   ref,
   uploadBytes,
@@ -70,6 +70,9 @@ function App() {
             </div>
           );
         })}
+      </div>
+      <div className="profile-details">
+        <h1>{localStorage.getItem("name")}</h1>
       </div>
     </div>
   );
