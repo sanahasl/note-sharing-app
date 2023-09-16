@@ -72,17 +72,8 @@ function App() {
           );
         })}
       </div>
-<<<<<<<< HEAD:src/pages/class.jsx
-      <div className="profile-details">
-        <h1>{localStorage.getItem("name")}</h1>
-========
-      <div className="signout">
-        <Link to="/">
-          <button className="signout-btn">SIGN OUT</button>
-        </Link>
->>>>>>>> parent of ab2658a (Revert "added signin page"):src/pages/App.jsx
+
       </div>
-    </div>
   );
 }
 
